@@ -1,0 +1,21 @@
+logging:
+  level:
+    com:
+      zv2:
+        uaa: DEBUG
+    org:
+      springframework:
+        security: DEBUG
+  pattern:
+    console: '%clr(%d{E HH:mm:ss.SSS}){blue} %clr(%-5p) %clr(${PID}){faint} %clr(---){faint}
+      %clr([%8.15t]){cyan} %clr(%-40.40logger{0}){blue} %clr(:){red} %clr(%m){faint}%n'
+server:
+  port: 8080
+spring:
+  application:
+    name: uaa
+  main:
+    banner-mode: 'OFF'
+  messages:
+    basename: messages
+    encoding: UTF-8

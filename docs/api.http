@@ -1,0 +1,13 @@
+@password=12345678
+###
+GET http://localhost:8080/api/users/greeting HTTP/1.1
+Authorization: Basic user {{password}}
+###
+POST http://localhost:8080/api/users/greeting?name=leet力 HTTP/1.1
+Authorization: Basic user {{password}}
+Content-Type: application/json
+
+{
+    "gender":"男",
+    "idNo":"44210986"
+}
