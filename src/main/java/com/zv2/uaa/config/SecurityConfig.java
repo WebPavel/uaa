@@ -4,7 +4,6 @@ import com.zv2.uaa.security.filter.ControllerAuthFilter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import lombok.val;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
@@ -62,11 +61,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private AuthenticationFailureHandler jsonAuthenticationFailureHandler() {
         return (request, response, exception) -> {
-            val objectMapper = new ObjectMapper();
+            var objectMapper = new ObjectMapper();
             response.setStatus(HttpStatus.UNAUTHORIZED.value());
             response.setContentType(MediaType.APPLICATION_JSON_VALUE);
             response.setCharacterEncoding(StandardCharsets.UTF_8.name());
-            val errorData = Map.of(
+            var errorData = Map.of(
                     "title", "认证失败",
                     "details", exception.getMessage()
 
